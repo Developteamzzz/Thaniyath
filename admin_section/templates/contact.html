@@ -1,0 +1,105 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+       
+</style>
+  <main id="main" class="main">
+
+</body>
+</html>
+    
+
+    <div class="pagetitle">
+      <h1><b>Contact</b></h1>
+      <nav>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-11">
+
+          <div class="card">
+            <div class="card-body" style="padding:20px;,back-ground color:black;">
+              <h5>{% if member %}Edit {% else%} Add {% endif %} Contact</h5>
+              {% comment %} <a href="contactupdate" style="position:auto; margin-left:750px;"><i class="bi bi-pencil-square"></i></a> {% endcomment %}
+              <!-- General Form Elements -->
+              <form method="post" id="form" action="contact" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-sm-12">
+                            {% comment %} <h5 class="card-title">Add Syllabus</h5> {% endcomment %}
+                        </div>
+                    </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-12 mb-1">
+                          <label for="contact" class="label">Contact No</label>
+                          <input name="contact" id="contact" type="number" value="{{member.contact}}" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-12 mb-1">
+                          <label for="email" class="label">Email </label>
+                          <input name="email" type="email"  value="{{member.email}}"  class="form-control" required>
+                    </div>
+                </div>
+                    
+                    <div class="row mb-3">
+                      <div class="col-sm-12 mb-1">
+                          <label for="address" class="label">Address</label> 
+                          <textarea name="address" type="text" class="form-control" required>{{member.address}} </textarea>
+                      </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-sm-12 mb-1">
+                              <label for="map" class="label">Location Map</label>
+                              <input name="map" type="text"  value="{{member.map}}" class="form-control" required>
+                        </div>
+                    </div>
+                    
+
+                    <div class="row mb-3">
+                        <div class="col-sm-12 mb-1">
+                              <label for="facebook" class="label">Facebook</label>
+                              <input name="facebook" type="text"  value="{{member.facebook}}"  class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col-sm-12 mb-1">
+                            <label for="whatsapp" class="label">Whatsapp</label>
+                            <input name="whatsapp" type="text"  value="{{member.whatsapp}}"  class="form-control" required>
+                      </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-12 mb-1">
+                          <label for="twitter" class="label">Twitter</label>
+                          <input name="twitter" type="text" value="{{member.twitter}}"   class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-sm-12 mb-3">
+                        <label for="instagram" class="label">Instagram</label>
+                        <input name="instagram" type="text"  value="{{member.instagram}}"  class="form-control" required>
+                  </div>
+              </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <button type="submit" id="form-submit" class="btn btn-primary">{% if member %}Update{% else %}Save{% endif %}</button>
+                       </div>
+                   </div>
+            </form>
+            
+</main>
+</html>
+{% include 'footer.html' %}

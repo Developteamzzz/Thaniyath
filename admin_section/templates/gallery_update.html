@@ -1,0 +1,81 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+       
+</style>
+  <main id="main" class="main">
+
+</body>
+</html>
+    
+
+    <div class="pagetitle">
+      <h1><b>Gallery </b></h1>
+      <nav>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-11">
+
+          <div class="card">
+            <div class="card-body" style="padding:20px;,back-ground color:black;">
+              <a href="../../list_gallery" style="position:auto; margin-left:850px;" title="previous"><i class="bi bi-skip-backward-fill"></i></a>
+              <!-- General Form Elements -->
+              <form method="post" id="form" action="{% url 'gallery_upt' id=member.id  %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-sm-12">
+                            {% comment %} <h5 class="card-title">Add Syllabus</h5> {% endcomment %}
+                        </div>
+                    </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-12 mb-1">
+                      <label for="image" class="label">Upload Photo</label>
+                            <div class="d-flex align-items-center">
+                                <div class="image-preview mr-3">
+                                    <img id="uploadedImage" src="../../../media/{{ member.image }}" class="rounded img-fluid" style="max-width: 100px; max-height: 150px;">
+                                </div>
+                                <input name="image" class="form-control-file" type="file" id="image" onchange="previewImage(this);">
+                            </div>
+                    </div>
+                </div>
+
+   
+                    <div class="row mb-3">
+                      <div class="col-sm-12 mb-1">
+                          <label for="description" class="label">Description</label> 
+                          <textarea name="description" type="text" class="form-control">{{member.description}}</textarea>
+                      </div>
+                    </div>
+                    
+                      <div class="row mb-3">
+                        <div class="col-sm-12 mb-1">
+                              <label for="title" class="label">Title</label>
+                              <input name="title" type="text"  value="{{member.title}}" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-12 mb-1">
+                              <label for="year" class="label">Year</label>
+                              <input name="year" type="text" value="{{member.year}}" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+                        <button type="submit" id="form-submit" class="btn btn-primary">Update</button>
+                       </div>
+                   </div>
+            </form>
+            
+</main>
+</html>
+{% include 'footer.html' %}
