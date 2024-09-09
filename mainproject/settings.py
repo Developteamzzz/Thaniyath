@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'thaniyath',
-        'HOST':'chg22us8ugbv.us-east-1.rds.amazonaws.com',
+        'HOST':'thaniyath.chg22us8ugbv.us-east-1.rds.amazonaws.com',
         'USER':'admin',
         'PASSWORD':'sarimoljiju1985',
         'PORT':'3306',
