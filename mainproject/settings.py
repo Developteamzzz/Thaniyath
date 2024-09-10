@@ -54,7 +54,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mainproject.urls'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# settings.py
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 
 TEMPLATES = [
     {
